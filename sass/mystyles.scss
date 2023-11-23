@@ -1,0 +1,7 @@
+@import 'settings';
+@import 'foundation';
+
+@include foundation-everything($prototype: true);
+
+
+$primary-color: #50cb2b;

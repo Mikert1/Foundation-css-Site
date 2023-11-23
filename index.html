@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/mystyles.css">
+    <title>Foundation</title>
+</head>
+<body>
+    <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas>
+        <div class="grid-y grid-padding-x" style="height: 100%;">
+          <br>
+          <div class="cell shrink">
+            <img class="thumbnail" src="Anselm.png">
+          </div>
+          <div class="cell auto">
+            <h5>Anselm wilmont</h5>
+            <p>Over mij: IK ben anselm ik ben 17 jaar oud en studeer bij de Bit academy.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="off-canvas-content" data-off-canvas-content>
+        <div class="title-bar hide-for-large">
+          <div class="title-bar-left">
+            <button class="menu-icon" type="button" data-toggle="my-info"></button>
+            <span class="title-bar-title">persoon</span>
+          </div>
+        </div>
+      
+      
+        <div class="callout secondary">
+          <article class="grid-container">
+            <div class="">
+                <img src="" alt="">
+              <h1>Bit Academy</h1>
+              <p class="lead">Stats</p>
+            </div>
+          </article>
+        </div>
+      
+      
+        <article class="grid-container">
+          <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-4">
+            <div class="cell">
+              <h3 class="text-center">Gemaakte exercises</h3>
+              <h1 class="text-center">154</h1>
+            </div>
+            <div class="cell">
+                <div class="cell">
+                    <h3>opdrachten afgerond in jarvis</h3>
+                    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 procent" aria-valuemax="100">
+                        <div class="progress-meter" style="width:8%">
+                            <p class="progress-meter-text">8%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                <h3>Maandelijks</h3>
+                <canvas id="lineChart" width="400" height="200"></canvas>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+                <script>
+                    var ctx = document.getElementById('lineChart').getContext('2d');
+                    var myLineChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                            datasets: [{
+                                label: 'Opdrachten gemaakt',
+                                data: [20, 23, 24, 13, 30],
+                                borderColor: '#2199e8',
+                                borderWidth: 2,
+                                fill: false
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+            <div class="cell">
+                <h3>Trails</h3>
+                <canvas id="pieChart" width="400" height="200"></canvas>
+
+                <script>
+                    var ctx = document.getElementById('pieChart').getContext('2d');
+                    var myPieChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['afgerond', 'afwachting', 'afgekeurd'],
+                            datasets: [{
+                                data: [3, 1, 1],
+                                backgroundColor: ['#00dd00', '#2199e8', '#ff6384']
+                            }]
+                        }
+                    });
+                </script>
+            </div>
+            <div class="cell">
+                <h3>XP</h3>
+                <canvas id="barChart" width="400" height="200"></canvas>
+
+                <script>
+                    var ctx = document.getElementById('barChart').getContext('2d');
+                    var myBarChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag'],
+                            datasets: [{
+                                label: 'dagelijkse xp',
+                                data: [50, 75, 60, 80, 65],
+                                backgroundColor: '#2199e8'
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+            <div class="cell">
+                <h3>Path</h3>
+                <canvas id="radarChart" width="400" height="200"></canvas>
+
+                <script>
+                    var ctx = document.getElementById('radarChart').getContext('2d');
+                    var myRadarChart = new Chart(ctx, {
+                        type: 'radar',
+                        data: {
+                            labels: ['HTML/CSS Beginner', 'HTML/CSS Advenced', 'Bootstrap', 'Javascript Beginner', 'Javascript Novice'],
+                            datasets: [{
+                                label: 'front end',
+                                data: [100, 0, 0, 100, 20],
+                                backgroundColor: 'rgba(33, 153, 232, 0.2)',
+                                borderColor: '#2199e8',
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            scale: {
+                                ticks: {
+                                    beginAtZero: true,
+                                    max: 100
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+            <div class="cell">
+                <h3>Soorten badges</h3>
+                <canvas id="doughnutChart" width="400" height="200"></canvas>
+
+                <script>
+                    var ctx = document.getElementById('doughnutChart').getContext('2d');
+                    var myDoughnutChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['legendary', 'uncommon', 'epic'],
+                            datasets: [{
+                                data: [1, 5, 3],
+                                backgroundColor: ['#dddd00', '#00dddd', '#dd00dd']
+                            }]
+                        }
+                    });
+                </script>
+            </div>
+            <div class="cell">
+                <h3>Basis Vakken</h3>
+                <t>procentuele progress</t>
+                <canvas id="polarAreaChart" width="400" height="200"></canvas>
+
+                <script>
+                    var ctx = document.getElementById('polarAreaChart').getContext('2d');
+                    var myPolarAreaChart = new Chart(ctx, {
+                        type: 'polarArea',
+                        data: {
+                            labels: ['Nederlands', 'Engels', 'Rekenen', 'Maatschapijleer', 'Wiskunde'],
+                            datasets: [{
+                                data: [20, 30, 25, 15, 10],
+                                backgroundColor: ['#ff6384', '#2199e8', '#ffce56', '#36a2eb', '#4bc0c0']
+                            }]
+                        }
+                    });
+                </script>
+            </div>
+          </div>
+      
+          <hr>
+      
+          <div class="grid-x grid-margin-x">
+            <div class="medium-6 cell">
+              <h3>Coatch View</h3>
+              <p>Voeg data toe</p>
+            </div>
+            <div class="medium-6 cell">
+              <label>Name
+                <select>
+                    <option value="option1">Gemaakte exercises</option>
+                    <option value="option2">opdrachten afgerond in jarvis</option>
+                    <option value="option3">Maandelijks</option>
+                    <option value="option4">Trails</option>
+                    <option value="option5">XP</option>
+                    <option value="option6">Path</option>
+                    <option value="option7">Soorten badges</option>
+                    <option value="option8">Basis Vakken</option>
+                  </select>
+              </label>
+              <label>Getal
+                <input type="number" placeholder="0">
+              </label>
+              <label>
+                Message
+                <textarea placeholder="De opdracht was goed gedaan"></textarea>
+              </label>
+              <a href="index.html"><input type="submit" class="button expanded" value="Verstuur"></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
